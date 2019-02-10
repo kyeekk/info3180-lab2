@@ -1,5 +1,39 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<hmtl>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+        {% block css %} {% endblock%}
+    </head>
+    {% extends "base.html" %}
 
-{% block main %}
-<h1>
-{% endblock %}
+    
+    {% block main %}
+    <title>Profile</title>
+    
+    <section class="main">
+        <img  class="profile pic" href={{url_for('app/static/profilepic.jpg')}}></img>
+        <h1 class ="name">Kayla Effs</h1>
+        <p>@kyeekk</p>
+        <p>Kingston, Jamaica</p>
+        <p>Joined February, 9 2019</p>
+    </section>
+    
+    <section class="supporting">
+        <p>A smart, hard-working and sociable person, currently attempting to complete a Bsc. Software Engineering</p>
+        
+        <section class="specifics">
+            <p id="postsnum">100</p>
+            <p id="followingnum">200</p>
+            <p id="followersnum">2,000</p>
+            
+            <p>POSTS</p>
+            <p>FOLLOWING</p>
+            <p>FLLOWERS</p>
+        </section>
+        
+        
+        
+        <button type="button" >Follow</button>
+    </section>
+    {% endblock %}
+</hmtl>

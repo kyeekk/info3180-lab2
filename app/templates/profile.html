@@ -1,39 +1,41 @@
-<!DOCTYPE html>
-<hmtl>
-    <head>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
-        {% block css %} {% endblock%}
-    </head>
-    {% extends "base.html" %}
+{% extends "base.html" %}
 
-    
-    {% block main %}
-    <title>Profile</title>
-    
-    <section class="main">
-        <img  class="profile pic" href={{url_for('app/static/profilepic.jpg')}}></img>
-        <h1 class ="name">Kayla Effs</h1>
-        <p>@kyeekk</p>
-        <p>Kingston, Jamaica</p>
-        <p>Joined February, 9 2019</p>
-    </section>
-    
-    <section class="supporting">
-        <p>A smart, hard-working and sociable person, currently attempting to complete a Bsc. Software Engineering</p>
-        
-        <section class="specifics">
-            <p id="postsnum">100</p>
-            <p id="followingnum">200</p>
-            <p id="followersnum">2,000</p>
-            
-            <p>POSTS</p>
-            <p>FOLLOWING</p>
-            <p>FLLOWERS</p>
-        </section>
-        
-        
-        
-        <button type="button" >Follow</button>
-    </section>
-    {% endblock %}
-</hmtl>
+{% block main %}
+<section class="profile-section">
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="profile-img-container">
+                <img src="{{url_for('static', filename='profile_img.jpeg')}}" alt="">
+            </div>
+            <div class="profile-header-info">
+                <h1>Kayla Effs</h1>
+                <h2>@kyeekk</h2>
+                <h2>Kingston, Jamaica</h2>
+                <h2>{{date_joined}}</h2>
+            </div>
+        </div>
+        <div class="profile-body">
+            <p>
+                I am a smart and talented young woman who loves 
+                website design and development. Contact me if 
+                you'd like to work together on a new project.
+            </p>
+            <ul>
+                <li>
+                    <span class="value">70</span>
+                    <span>Posts</span>
+                </li>
+                <li>
+                    <span class="value">10</span>
+                    <span>Following</span>
+                </li>
+                <li>
+                    <span class="value">2.5E+10</span>
+                    <span>Followers</span>
+                </li>
+            </ul>
+            <button class="button-follow">Follow</button>
+        </div>
+    </div>
+</section>
+{% endblock %}
